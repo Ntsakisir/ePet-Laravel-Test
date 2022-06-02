@@ -28,10 +28,7 @@ class ProductVariantController extends Controller
      */
     public function create()
     {
-        //
-        // $products  = Product::find($id);
         return view('variant.create');
-
     }
 
     /**
@@ -59,7 +56,6 @@ class ProductVariantController extends Controller
         $variant->save();
 
         return redirect('products');
-
 
     }
 
@@ -95,7 +91,8 @@ class ProductVariantController extends Controller
      */
     public function edit($id)
     {
-        //
+        $prodvariant = ProductVariant::find($id);
+        return view('variant.edit', compact('prodvariant'));
     }
 
     /**
@@ -107,7 +104,22 @@ class ProductVariantController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'product_id'=>'required',
+            'web_product_code'=>'required',
+            'name'=>'required',
+        ]);
+
+        $variant = ProductVariant::find($id);
+
+        $variant->product_id = $request->input('product_id');
+        $variant->sap_product_code = $request->input('sap_product_code');
+        $variant->web_product_code = $request->input('web_product_code');
+        $variant->name = $request->input('name');
+        
+        $variant->update();
+
+        return redirect('products');
     }
 
     /**
@@ -118,6 +130,8 @@ class ProductVariantController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $variant = ProductVariant::find($id);
+        $variant->delete();
+        return back()->with('success','Item deleted successfully!');
     }
 }

@@ -100,7 +100,7 @@ class ProductController extends Controller
         {
             $cats [$category->id] = $category->name;
         }
-        return view('product.edit')->with('prod',$prod)->with('cats',$cats);
+        return view('product.edit')->with('prod',$prod)->with('cat',$cat);
         // return view('product.edit', compact('prod','cat'));
     }
 
@@ -142,6 +142,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $product->delete();
+        $product->category()->detach();
         return back()->with('success','Item deleted successfully!');
     }
 }

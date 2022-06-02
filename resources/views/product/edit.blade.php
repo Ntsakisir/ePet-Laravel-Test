@@ -24,9 +24,9 @@
             <div class="mb-6">
                 <x-label for="category" :value="__('category')" />
               
-                <select id="select3" class="select2 block mt-1 w-full" multiple="multiple" data-live-search="true" name="category_id[]"  required>
-                @forelse ($prod->category as $cate)  
-                <option value="{{$cate->id}} {{ $prod->category_id == $cate->id ? 'selected' : '' }}">
+                <select id="select3" class="select2 block mt-1 w-full" multiple="multiple" data-live-search="true" name="category_id[]" >
+                @forelse ($cat as $cate)  
+                <option value="{{$cate->id}}">
                     {{$cate->name}}
                     </option>
                     @empty

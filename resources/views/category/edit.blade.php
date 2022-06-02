@@ -28,7 +28,12 @@
             </div>
             <div>
                 <x-label for="meta_keywords" :value="__('meta_keywords')" />
-                <x-input id="meta_keywords" class="block mt-1 w-full" type="text" name="meta_keywords[]" value="{{ $cat->meta_keywords}}" required autofocus />
+
+                @foreach ($cat->meta_keywords as $cat)
+                <x-input id="meta_keywords" class="block mt-1 w-full" type="text" name="meta_keywords[]" value=" {{ $cat }}" required autofocus />
+                        @endforeach
+                        
+                       
             </div>
 
            

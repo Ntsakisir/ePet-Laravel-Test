@@ -6,7 +6,7 @@
                     <h1 class="text-2xl text-grey-dark font-bold capitalize">{{ $product->name }}</h1>
                     </div>
                     <div class="grid justify-items-end">
-                    <a href="/" class="btn btn-primary text-center text-white bg-green px-2 py-4 rounded-md capitalize" type="submit" >back to products</a>
+                    <a href="/" class="btn btn-primary text-center text-white bg-green px-2 py-4 rounded-md capitalize" type="submit" >back to categories</a>
                     </div>
                 </div>
                

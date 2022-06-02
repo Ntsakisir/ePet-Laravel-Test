@@ -129,7 +129,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $category->delete();
-    
+        $category->products()->detach();
         return back()->with('success','Item deleted successfully!');
     }
 }

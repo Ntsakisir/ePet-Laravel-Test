@@ -17,7 +17,8 @@ class ProductVariantController extends Controller
     public function index()
     {
         $products = DB::table('products')->get();
-        return view('variant.index', compact('products'));
+        $variants = DB::table('product_variants')->get();
+        return view('variant.index', compact('variants', 'products'));
 
     }
 
@@ -55,7 +56,7 @@ class ProductVariantController extends Controller
         
         $variant->save();
 
-        return redirect('products');
+        return redirect('variants');
 
     }
 
@@ -79,8 +80,8 @@ class ProductVariantController extends Controller
     public function show($id)
     {
         //
-        $products  = Product::find($id);
-        return view('variant.create', compact('products'));
+        $variants  = ProductVariant::find($id);
+        return view('variant.show', compact('variants'));
     }
 
     /**
@@ -119,7 +120,7 @@ class ProductVariantController extends Controller
         
         $variant->update();
 
-        return redirect('products');
+        return redirect('/variants');
     }
 
     /**

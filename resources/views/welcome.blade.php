@@ -26,7 +26,7 @@
             <div class="grid grid-cols-4 gap-6 space-x-8 pt-10 px-8">
                 @forelse($categories as $cat )
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg hover:bg-blue hover:text-white px-8 py-8 ">
-                    <a href="{{ route('showCategoryProducts', $cat->id) }}" class="text-sm h-full">
+                    <a href="{{ route('getCategoryProducts', $cat->id) }}" class="text-sm h-full">
                     <p class="mt-1 font-medium text-sm font-gothic-bold text-grey-dark uppercase">{{$cat->name}}</p>
                     <p class="mt-1 font-medium text-lg text-grey-dark font-gothic-bold "> {{$cat->meta_title}}</p>
                     <p class="mt-1 text-md font-gothic text-black"> {{$cat->meta_description}}</p>

@@ -51,8 +51,9 @@ Route::group(["middleware" => ["auth"]], function(){
     Route::get('addVariants',[ProductVariantController::class, 'create'])->name('addVariants');
     Route::post('saveVariant',[ProductVariantController::class, 'store'])->name('saveVariant');
     Route::get('/variants',[ProductVariantController::class, 'index'])->name('variants');
-    Route::get('editvariant/{id}', [ProductVariantController::class, 'edit'])->name('editVariant');
+    Route::get('editVariant/{id}', [ProductVariantController::class, 'edit'])->name('editVariant');
     Route::put('updatevariant/{id}', [ProductVariantController::class, 'update'])->name('updateVariant');
+    Route::get('show/{id}', [ProductVariantController::class, 'show'])->name('show');
     Route::get('/destroy', [ProductVariantController::class, 'destroy'])->name('delete');
     Route::delete('variant/{id}', [ProductVariantController::class, 'destroy'])->name('destroy');
 

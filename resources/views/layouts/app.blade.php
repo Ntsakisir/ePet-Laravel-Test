@@ -32,8 +32,41 @@
 
             <!-- Page Content -->
             <main>
+            <div class="py-12 w-full">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="grid grid-cols-3 gap-6 mx-auto">
+                <div class="flex place-content-start">
+               
+          <nav class="px-2 space-y-1">
+          
+            <a href="/categories" class="bg-gray-100 text-black group flex items-center px-2 py-2 text-base font-medium rounded-md">
+              categories
+            </a>
+
+            <a href="/products" class="text-gray-600 hover:bg-gray-50 hover:text-black group flex items-center px-2 py-2 text-base font-medium rounded-md">
+              <!-- Heroicon name: outline/users -->
+             
+              Products
+            </a>
+
+            <a href="/variants" class="text-gray-600 hover:bg-gray-50 hover:text-black group flex items-center px-2 py-2 text-base font-medium rounded-md">
+              <!-- Heroicon name: outline/folder -->
+          
+              Variants
+            </a>
+
+          </nav>
+        
+                </div>
+            <div class=" col-span-2 bg-white overflow-hidden shadow-sm sm:rounded-lg">
+               
             @include('message')
                 {{ $slot }}
+            </div>
+            </div>
+        </div>
+    </div>
+
             </main>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

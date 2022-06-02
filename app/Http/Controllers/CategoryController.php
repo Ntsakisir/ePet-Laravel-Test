@@ -73,7 +73,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        $category = Category::find($id);
+        $category = Category::findOrFail($id);
         return view('category.products')->with('data', $category);
     }
 
@@ -85,7 +85,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $cat = Category::find($id);
+        $cat = Category::findOrFail($id);
         $keywords = json_encode($cat->meta_keywords);
         return view('category.edit', compact('cat','keywords'));
     }
@@ -108,7 +108,7 @@ class CategoryController extends Controller
 
         ]);
         
-        $category = Category::find($id);
+        $category = Category::findOrFail($id);
         $category->name = $request->input('name');
         $category->meta_title = $request->input('meta_title');
         $category->meta_description = $request->input('meta_description');

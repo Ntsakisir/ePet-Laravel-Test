@@ -39,14 +39,12 @@
           <td class="px-6 py-4">
                     {{ $product->name }}
                 </td>
-           <td class="px-6 py-4">
-                    <a href="{{route ('addVariant', $product->id) }}" type="button" class="bg-green px-2 py-2 rounded-lg text-white ml-4">Add variant</a>
-                </td>
+         
           <td class="px-6 py-4">
           <a  href="{{ route ('getProductVariants', $product->slug) }}" type="button" class="bg-green px-2 py-2 rounded-lg text-white ml-4">view</a>
                 </td>
           <td class="px-6 py-4">
-                    <a type="button" class="bg-yellow px-2 py-2 rounded-lg text-white ml-4">Edit</a>
+                    <a href="{{ route ('editProduct', $product->id) }}" type="button" class="bg-yellow px-2 py-2 rounded-lg text-white ml-4">Edit</a>
                 </td>
           <td class="px-6 py-4">
           <form method="POST" action="{{route ('destroy', ['id' => $product->id ] )}}">

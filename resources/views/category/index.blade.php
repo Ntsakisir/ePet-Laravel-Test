@@ -46,10 +46,7 @@
                     <a href="{{ route('showCategoryProducts', $cat->id) }}" type="button" class="bg-green px-2 py-2 rounded-lg text-white ml-4">View</a>
                 </td>
                 <td class="px-6 py-4">
-                    <a href="{{ url('editCategory' , $cat->id) }}" type="button" class="bg-green px-2 py-2 rounded-lg text-white ml-4">edit</a>
-                </td>
-                <td class="px-6 py-4">
-                    <a type="button" class="bg-yellow px-2 py-2 rounded-lg text-white ml-4">Edit</a>
+                    <a href="{{ url('editCategory' , $cat->id) }}" type="button" class="bg-yellow px-2 py-2 rounded-lg text-white ml-4">edit</a>
                 </td>
                 <td class="px-6 py-4">
                 <form method="POST" action="{{route ('destroy', ['id' => $cat->id ] )}}">

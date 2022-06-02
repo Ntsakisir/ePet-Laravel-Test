@@ -47,7 +47,7 @@
                     <a href="{{ route ('editProduct', $product->id) }}" type="button" class="bg-yellow px-2 py-2 rounded-lg text-white ml-4">Edit</a>
                 </td>
           <td class="px-6 py-4">
-          <form method="POST" action="{{route ('destroy', ['id' => $product->id ] )}}">
+          <form method="POST" action="{{route ('destroyProduct', ['id' => $product->id ] )}}">
                 @method('delete')
                                 @csrf
                                 <button type="submit" class="bg-red px-2 py-2 rounded-lg text-white ml-4" onclick="return confirm('Are you sure ?')"> <span><i class="fas fa-trash"></i></span>

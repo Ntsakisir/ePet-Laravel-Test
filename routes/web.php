@@ -45,7 +45,7 @@ Route::group(["middleware" => ["auth"]], function(){
     Route::get('editProduct/{id}', [ProductController::class, 'edit'])->name('editProduct');
     Route::put('updateProduct/{id}', [ProductController::class, 'update'])->name('updateProduct');
     Route::get('/destroy', [ProductController::class, 'destroy'])->name('delete');
-    Route::delete('product/{id}', [ProductController::class, 'destroy'])->name('destroy');
+    Route::delete('product/{id}', [ProductController::class, 'destroy'])->name('destroyProduct');
 
 
     Route::get('addVariants',[ProductVariantController::class, 'create'])->name('addVariants');
@@ -54,8 +54,8 @@ Route::group(["middleware" => ["auth"]], function(){
     Route::get('editVariant/{id}', [ProductVariantController::class, 'edit'])->name('editVariant');
     Route::put('updatevariant/{id}', [ProductVariantController::class, 'update'])->name('updateVariant');
     Route::get('show/{id}', [ProductVariantController::class, 'show'])->name('show');
-    Route::get('/destroy', [ProductVariantController::class, 'destroy'])->name('delete');
-    Route::delete('variant/{id}', [ProductVariantController::class, 'destroy'])->name('destroy');
+    Route::get('/destroy', [ProductVariantController::class, 'destroy'])->name('deleteVariant');
+    Route::delete('variant/{id}', [ProductVariantController::class, 'destroy'])->name('destroyVariant');
 
  });
 

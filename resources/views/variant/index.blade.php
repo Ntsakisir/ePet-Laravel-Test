@@ -67,7 +67,7 @@
                     <a href="{{ route ('editVariant', $variant->id) }}" type="button" class="bg-yellow px-2 py-2 rounded-lg text-white ml-4">Edit</a>
                 </td>
                 <td>
-                <form method="POST" action="{{route ('destroy', ['id' => $variant->id ] )}}">
+                <form method="POST" action="{{route ('destroyVariant', ['id' => $variant->id ] )}}">
                 @method('delete')
                                 @csrf
                                 <button type="submit" class="bg-red px-2 py-2 rounded-lg text-white ml-4" onclick="return confirm('Are you sure ?')"> <span><i class="fas fa-trash"></i></span>

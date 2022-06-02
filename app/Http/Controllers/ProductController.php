@@ -142,7 +142,6 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $product->delete();
-    
         return back()->with('success','Item deleted successfully!');
     }
 }

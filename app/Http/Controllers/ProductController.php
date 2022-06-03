@@ -62,7 +62,8 @@ class ProductController extends Controller
         $categoryId = $request->input('category_id');
         $product->category()->attach($categoryId);
 
-        return redirect('products');
+        // return redirect('products');
+        return back()->with('success','Product created successfully!');
     }
 
     public function getProductVariants(Product $product )
@@ -81,7 +82,7 @@ class ProductController extends Controller
         // $single =  Product::where('slug', $product)->first();
         // return response()->json(array('data' => $single));
         $product = Product::find($id);
-        return view('product');
+        return view('product', compact('product'));
 
 
     }

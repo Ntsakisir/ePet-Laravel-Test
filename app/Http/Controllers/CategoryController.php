@@ -116,7 +116,7 @@ class CategoryController extends Controller
 
         $category->update();
          
-        return back()->with('success','Item created successfully!');
+        return redirect('categories')->with('success','Item created successfully!');
     }
 
     /**

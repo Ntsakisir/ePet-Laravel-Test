@@ -12,7 +12,7 @@
 @method('PUT')
  <!-- Name -->
             <div>
-                <x-input id="product_id" class="block mt-1 w-full" type="text" name="product_id" value="{{$prodvariant->product_id}}" required />
+                <x-input id="product_id" class="block mt-1 w-full" type="hidden" name="product_id" value="{{$prodvariant->product_id}}" required />
             </div> 
             <div class="mb-6">
                 <x-label for="sap_product_code" :value="__('Sap Product Code')" />

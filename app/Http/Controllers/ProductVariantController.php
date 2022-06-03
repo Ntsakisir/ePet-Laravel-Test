@@ -56,7 +56,8 @@ class ProductVariantController extends Controller
         
         $variant->save();
 
-        return redirect('variants');
+        // return redirect('variants');
+        return back()->with('success','variant created successfully!');
 
     }
 

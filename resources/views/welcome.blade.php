@@ -35,7 +35,7 @@
 
                 @empty
 
-                <p class="outline-none ring-1 ring-offset-2 ring-orange">No categories</p>
+                <p class="outline-none ring-1 ring-offset-2 ring-orange">No data to display</p>
             @endforelse
          
             </div>

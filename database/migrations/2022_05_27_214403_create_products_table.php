@@ -15,12 +15,11 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->string('slug')->nullable();
+            $table->string('name');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *

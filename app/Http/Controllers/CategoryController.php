@@ -108,13 +108,13 @@ class CategoryController extends Controller
 
         ]);
         
-        $category = Category::findOrFail($id);
+        $category = Category::find($id);
         $category->name = $request->input('name');
         $category->meta_title = $request->input('meta_title');
         $category->meta_description = $request->input('meta_description');
         $category->meta_keywords = $request->input('meta_keywords');
 
-        $category->save();
+        $category->update();
          
         return back()->with('success','Item created successfully!');
     }

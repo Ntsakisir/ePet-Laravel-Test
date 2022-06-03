@@ -27,21 +27,15 @@
                 <select id="select3" class="select2 block mt-1 w-full" multiple="multiple" data-live-search="true" name="category_id[]" >
                 @forelse ($cat as $cate)  
                 <option value="{{$cate->id}}">
+                <!-- <option value="{{$cate->id}}" @if( $cate->id == $prod->category()->first()->id ) selected @endif > -->
                     {{$cate->name}}
                     </option>
                     @empty
                         <p>no categories</p>
-
                     @endforelse
                 </select>
-         
             </div>
-   
-
-           
             <div class="flex items-center justify-end mt-4">
-               
-
                 <x-button class="ml-4">
                     {{ __('Update') }}
                 </x-button>

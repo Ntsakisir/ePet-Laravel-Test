@@ -120,14 +120,13 @@ class ProductController extends Controller
         ]);
 
         $product = Product::find($id);
-
         $product->name = $request->input('name');
         $product->slug = Str::slug($request->input('slug'));;
         
         $product->update();
 
         $categoryId = $request->input('category_id');
-        $product->category()->attach($categoryId);
+        $product->category()->sync($categoryId);
 
         return redirect('products');
     }
